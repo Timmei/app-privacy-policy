@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>获取游戏 Code</title>
+    <style>
+        body {
+            font-family: "微软雅黑", sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px 40px;
+            border-radius: 15px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 400px;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        .wechat {
+            font-weight: bold;
+            color: #1aad19;
+            font-size: 18px;
+            margin: 15px 0;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            background-color: #1890ff;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #1070d1;
+        }
+        .note {
+            font-size: 14px;
+            color: #888;
+            margin-top: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>获取游戏 Code</h1>
+        <p>每日游戏次数已达上限，输入 Code 可继续游戏。</p>
+        <p>请添加以下微信号获取 Code：</p>
+        <p class="wechat" id="wechat">meicl_up</p>
+        <button onclick="copyWeChat()">点击复制微信号</button>
+        <p class="note">复制微信号后添加好友，发送消息即可获取 Code</p>
+    </div>
+
+    <script>
+        function copyWeChat() {
+            const wechat = document.getElementById("wechat").innerText;
+            navigator.clipboard.writeText(wechat).then(() => {
+                alert("微信号已复制到剪贴板！");
+            }).catch(() => {
+                alert("复制失败，请手动复制微信号！");
+            });
+        }
+    </script>
+</body>
+</html>
